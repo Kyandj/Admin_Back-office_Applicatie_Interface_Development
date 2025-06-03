@@ -40,10 +40,16 @@ namespace DataAccessLayer
 
             var products = new Product[]
             {
-                new Product { Name = "Nebuchadnezzar", Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen", Price = 10000.00m },
-                new Product { Name = "Jack-in Chair", Description = "Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een kabel in de nekpoort", Price = 500.50m },
-                new Product { Name = "EMP (Electro-Magnetic Pulse) Device", Description = "Wapentuig op de schepen van Zion", Price = 129.99m }
-            };
+             new Product {
+                   Name = "Nebuchadnezzar",
+                   Description = "...",
+                   Price = 10000.00m,
+                   Category = "Schip",
+                   Stock = 5,
+                   IsVisible = true,
+                   ImageUrl = "https://voorbeeld.nl/afbeelding.jpg"
+                         }
+               };
             context.Products.AddRange(products);
 
             var parts = new Part[]
