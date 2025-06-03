@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 namespace DataAccessLayer.Models
 {
     public class Product
-    {        
+    {
         public int Id { get; set; }
-
         public string Name { get; set; }
-
-        public string Description { get; set; }
-
+        public string Category { get; set; }
         public decimal Price { get; set; }
-
-        public ICollection<Order> Orders { get; } = new List<Order>();
-
-        public ICollection<Part> Parts { get; } = new List<Part>();
+        public string ArticleNumber { get; set; }
+        public int Stock { get; set; }
+        public string Description { get; set; }
+        public bool IsVisible { get; set; }
+        public string ImageUrl { get; set; } 
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<Part> Parts { get; set; } = new List<Part>();
     }
 }
