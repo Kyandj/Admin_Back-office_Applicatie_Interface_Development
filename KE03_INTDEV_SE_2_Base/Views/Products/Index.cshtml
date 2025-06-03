@@ -10,7 +10,7 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<table class="table">
+@* <table class="table">
     <thead>
         <tr>
             <th>
@@ -46,4 +46,26 @@
             </tr>
         }
     </tbody>
-</table>
+</table> *@
+
+
+<div class="product-grid">
+    @foreach (var item in Model)
+    {
+        <div>
+                <h1>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h1>
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </h2>
+                <h3>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </h3>
+                @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+        </div>
+        
+    }
+</div>
