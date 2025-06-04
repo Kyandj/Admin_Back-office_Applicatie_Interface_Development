@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model DataAccessLayer.Models.Product
+
+<form asp-action="ProductBewerken" method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Naam:</label>
+    <input asp-for="Name" class="form-control" />
+    <label>Categorie:</label>
+    <input asp-for="Category" class="form-control" />
+    <label>Prijs:</label>
+    <input asp-for="Price" class="form-control" type="number" step="0.01" />
+    <label>Artikelnummer:</label>
+    <input asp-for="ArticleNumber" class="form-control" />
+    <label>Aantal op voorraad:</label>
+    <input asp-for="Stock" class="form-control" type="number" />
+    <label>Zichtbaar voor klanten:</label>
+    <input asp-for="IsVisible" type="checkbox" />
+    <label>Beschrijving:</label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+    <label>Afbeelding (URL):</label>
+    <input asp-for="ImageUrl" class="form-control" />
+    <button type="submit" class="btn btn-success">Aanpassen</button>
+</form>
