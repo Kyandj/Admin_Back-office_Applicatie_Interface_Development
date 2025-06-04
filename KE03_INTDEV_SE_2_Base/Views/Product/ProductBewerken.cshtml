@@ -1,23 +1,76 @@
 ﻿@model DataAccessLayer.Models.Product
-Namespace KE03_INTDEV_SE_2_Base.Views.Product
 
-<form asp-action="ProductBewerken" method="post">
-    <input type="hidden" asp-for="Id" />
-    <label>Naam:</label>
-    <input asp-for="Name" class="form-control" />
-    <label>Categorie:</label>
-    <input asp-for="Category" class="form-control" />
-    <label>Prijs:</label>
-    <input asp-for="Price" class="form-control" type="number" step="0.01" />
-    <label>Artikelnummer:</label>
-    <input asp-for="ArticleNumber" class="form-control" />
-    <label>Aantal op voorraad:</label>
-    <input asp-for="Stock" class="form-control" type="number" />
-    <label>Zichtbaar voor klanten:</label>
-    <input asp-for="IsVisible" type="checkbox" />
-    <label>Beschrijving:</label>
-    <textarea asp-for="Description" class="form-control"></textarea>
-    <label>Afbeelding (URL):</label>
-    <input asp-for="ImageUrl" class="form-control" />
-    <button type="submit" class="btn btn-success">Aanpassen</button>
-</form>
+@{
+    ViewData["Title"] = "Product Bewerken";
+}
+
+<div class="main-container">
+    <h2 class="form-title">Product Bewerken</h2>
+    <div class="form-responsive-row">
+        <div class="form-section">
+            <form asp-action="ProductBewerken" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Category" class="form-label"></label>
+                    <input asp-for="Category" class="form-control" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label"></label>
+                    <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ArticleNumber" class="form-label"></label>
+                    <input asp-for="ArticleNumber" class="form-control" />
+                    <span asp-validation-for="ArticleNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Stock" class="form-label"></label>
+                    <input asp-for="Stock" class="form-control" type="number" />
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="IsVisible" class="form-check-input" type="checkbox" />
+                    <label asp-for="IsVisible" class="form-check-label"></label>
+                    <span asp-validation-for="IsVisible" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">Aanpassen</button>
+            </form>
+        </div>
+        <div class="image-section">
+            @if (!string.IsNullOrEmpty(Model?.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="Afbeelding" style="max-width:100%; max-height:100%;" />
+            }
+            else
+            {
+                <span style="color:#888;">Afbeelding</span>
+            }
+        </div>
+    </div>
+</div>
