@@ -94,6 +94,19 @@ namespace KE03_INTDEV_SE_2_Base.Controllers
             }
             return View(product);
         }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(AlleProducten));
+        }
+
     }
 }
 
