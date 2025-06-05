@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<DataAccessLayer.Models.Product>
 
-<h2>Alle Producten</h2>
+@* <h2>Alle Producten</h2>
 
 <div class="mb-3">
     <a asp-action="Create" asp-controller="Product" class="btn btn-primary">Voeg product toe</a>
@@ -30,8 +30,42 @@
                 <td>@(item.IsVisible ? "Ja" : "Nee")</td>
                 <td>
                     <a asp-action="ProductBewerken" asp-route-id="@item.Id">Bewerken</a>
+                    <a asp-action="ProductDetails" asp-route-id="@item.Id">Details</a>
                 </td>
             </tr>
         }
     </tbody>
-</table>
+</table> *@
+
+<div class="producten-header">
+    <span class="categorie-btn">Categorieën</span>
+    <form method="get" class="zoek-form">
+        <input type="text" name="search" placeholder="Zoek een product" class="zoek-input" value="@(ViewContext.HttpContext.Request.Query["search"])" />
+        <button type="submit" class="zoek-clear" title="Wis zoekopdracht">&times;</button>
+    </form>
+    <a asp-action="Create" asp-controller="Product" class="voeg-toe-btn">+ Voeg product toe</a>
+</div>
+
+<h2 class="producten-title">Alle Producten</h2>
+
+<div class="producten-grid">
+    @foreach (var item in Model)
+    {
+        <div class="product-card">
+            <div class="product-image">
+                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                {
+                    <img src="@item.ImageUrl" alt="@item.Name" />
+                }
+                else
+                {
+                    <div class="image-placeholder"></div>
+                }
+            </div>
+            <a asp-action="ProductDetails" asp-route-id="@item.Id" class="product-name-btn">
+                @item.Name
+            </a>
+            <div class="product-price">$@item.Price</div>
+        </div>
+    }
+</div>

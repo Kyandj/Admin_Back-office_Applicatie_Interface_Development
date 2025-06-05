@@ -83,6 +83,17 @@ namespace KE03_INTDEV_SE_2_Base.Controllers
             }
             return View(product);
         }
+
+        // Product details pagina
+        public IActionResult ProductDetails(int id)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
     }
 }
 
