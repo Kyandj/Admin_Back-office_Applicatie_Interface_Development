@@ -46,9 +46,10 @@
         </div>
     </div>
     <a asp-action="ProductBewerken" asp-route-id="@Model.Id" class="btn btn-edit">Bewerken</a>
-    <a asp-action="AlleProducten" class="btn btn-delete">Verwijderen</a>
-    <form asp-action="Delete" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Weet je zeker dat je dit product wilt verwijderen?');">
-        <button type="submit" class="btn btn-danger">Verwijderen</button>
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post"
+          onsubmit="return confirm('Weet je zeker dat je dit product wilt verwijderen?');" style="display:inline;">
+        <button type="submit" class="btn btn-delete">Verwijderen</button>
     </form>
+
 
 </div>

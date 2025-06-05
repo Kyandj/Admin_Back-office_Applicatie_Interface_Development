@@ -57,11 +57,28 @@ namespace KE03_INTDEV_SE_2_Base.Controllers
         }
 
         // AlleProducten pagina
-        public async Task<IActionResult> AlleProducten()
+        public async Task<IActionResult> AlleProducten(string categorie)
         {
-            var producten = await _context.Products.ToListAsync();
-            return View(producten);
+            // Haal alle unieke categorieën op voor de view
+            var categories = await _context.Products
+                .Select(p => p.Category)
+                .Distinct()
+                .ToListAsync();
+
+            // Filter producten op categorie als die is opgegeven
+            var producten = _context.Products.AsQueryable();
+            if (!string.IsNullOrEmpty(categorie))
+            {
+                producten = producten.Where(p => p.Category == categorie);
+            }
+
+            ViewBag.Categories = categories;
+            ViewBag.SelectedCategory = categorie;
+
+            return View(await producten.ToListAsync());
         }
+
+
 
         // GET: Product/Create
         public IActionResult Create()

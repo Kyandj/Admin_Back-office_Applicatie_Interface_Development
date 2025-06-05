@@ -239,7 +239,7 @@ body {
 }
 
 .btn-delete {
-    background: #ff4444;
+    background: #FF0000;
     color: #222;
     border: 2px solid #111;
     border-radius: 28px;
@@ -249,6 +249,7 @@ body {
     margin-top: 24px;
     transition: background 0.2s;
 }
+
 
 /* ProductCreaten pagina (Duncan)*/
     body {

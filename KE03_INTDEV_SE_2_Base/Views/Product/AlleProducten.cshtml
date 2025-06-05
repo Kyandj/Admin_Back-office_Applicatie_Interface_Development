@@ -1,7 +1,21 @@
-﻿@model IEnumerable<DataAccessLayer.Models.Product>
+﻿@{
+    var categories = ViewBag.Categories as List<string>;
+    var selectedCategory = ViewBag.SelectedCategory as string;
+}
+
+<form asp-action="AlleProducten" method="get" style="margin-bottom: 20px;">
+    <select name="categorie" onchange="this.form.submit()" class="btn btn-categorieën">
+        <option value="">Categoriën</option>
+        @foreach (var cat in categories)
+        {
+            <option value="@cat" selected="@(cat == selectedCategory ? "selected" : null)">@cat</option>
+        }
+    </select>
+</form>
+
+@model IEnumerable<DataAccessLayer.Models.Product>
 
 <div class="producten-header">
-    <span class="categorie-btn">Categorieën</span>
     <form method="get" class="zoek-form">
         <input type="text" name="search" placeholder="Zoek een product" class="zoek-input" value="@(ViewContext.HttpContext.Request.Query["search"])" />
         <button type="submit" class="zoek-clear" title="Wis zoekopdracht">&times;</button>
