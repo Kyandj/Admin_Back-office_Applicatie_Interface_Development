@@ -1,0 +1,37 @@
+﻿@model IEnumerable<DataAccessLayer.Models.Product>
+
+<h2>Alle Producten</h2>
+
+<div class="mb-3">
+    <a asp-action="Create" asp-controller="Product" class="btn btn-primary">Voeg product toe</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Categorie</th>
+            <th>Prijs</th>
+            <th>Artikelnummer</th>
+            <th>Voorraad</th>
+            <th>Zichtbaar</th>
+            <th>Acties</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+                <td>@item.Price</td>
+                <td>@item.ArticleNumber</td>
+                <td>@item.Stock</td>
+                <td>@(item.IsVisible ? "Ja" : "Nee")</td>
+                <td>
+                    <a asp-action="ProductBewerken" asp-route-id="@item.Id">Bewerken</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -40,9 +40,39 @@ namespace DataAccessLayer
 
             var products = new Product[]
             {
-                new Product { Name = "Nebuchadnezzar", Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen", Price = 10000.00m },
-                new Product { Name = "Jack-in Chair", Description = "Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een kabel in de nekpoort", Price = 500.50m },
-                new Product { Name = "EMP (Electro-Magnetic Pulse) Device", Description = "Wapentuig op de schepen van Zion", Price = 129.99m }
+                new Product
+                {
+                    Name = "Nebuchadnezzar",
+                    Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen",
+                    Price = 10000.00m,
+                    ArticleNumber = "SHIP-001",
+                    Category = "Schip",
+                    Stock = 2,
+                    IsVisible = true,
+                    ImageUrl = "https://voorbeeld.nl/nebuchadnezzar.jpg"
+                },
+                new Product
+                {
+                    Name = "Jack-in Chair",
+                    Description = "Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een kabel in de nekpoort",
+                    Price = 500.50m,
+                    ArticleNumber = "CHAIR-001",
+                    Category = "Stoel",
+                    Stock = 10,
+                    IsVisible = true,
+                    ImageUrl = "https://voorbeeld.nl/jackinchair.jpg"
+                },
+                new Product
+                {
+                    Name = "EMP (Electro-Magnetic Pulse) Device",
+                    Description = "Wapentuig op de schepen van Zion",
+                    Price = 129.99m,
+                    ArticleNumber = "EMP-001",
+                    Category = "Wapen",
+                    Stock = 5,
+                    IsVisible = false,
+                    ImageUrl = "https://voorbeeld.nl/emp.jpg"
+                }
             };
             context.Products.AddRange(products);
 
