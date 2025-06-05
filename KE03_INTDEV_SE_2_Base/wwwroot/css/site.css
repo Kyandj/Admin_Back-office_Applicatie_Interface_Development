@@ -21,6 +21,29 @@ body {
   margin-bottom: 60px;
 }
 
+/* Nav bar (Kyan)*/
+.user-info {
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 1rem;
+    border: 1.5px solid #222;
+    margin-right: 4px;
+}
+
+.settings-icon {
+    font-size: 1.5rem;
+    margin-left: 8px;
+    cursor: pointer;
+    border: 1.5px solid #222;
+    border-radius: 50%;
+    padding: 2px 6px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* AlleProducten pagina (Duncan)*/
 .producten-header {
     display: flex;
@@ -103,6 +126,20 @@ body {
     grid-template-columns: repeat(3, 180px);
     gap: 32px 48px;
     justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .producten-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .producten-grid {
+        grid-template-columns: 1fr;
+        gap: 16px 0;
+    }
 }
 
 .product-card {
