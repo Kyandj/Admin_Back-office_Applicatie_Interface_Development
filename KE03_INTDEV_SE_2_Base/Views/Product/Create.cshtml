@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+@* <h1>Create</h1>
 
 <h4>Product</h4>
 <hr />
@@ -57,6 +57,127 @@
             </div>
         </form>
     </div>
+</div> *@
+
+@* <div class="main-container">
+    <div class="custom-title">Een Product toevoegen</div>
+    <a asp-action="AlleProducten" class="back-btn">terug</a>
+    <div class="form-row">
+        <!-- Linkerkant: Formulier -->
+        <div class="form-section">
+            <form asp-action="Create" method="post">
+                <div>
+                    <label asp-for="Name" class="form-label">Naam:</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Price" class="form-label">Prijs:</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Stock" class="form-label">Aantal op voorraad:</label>
+                    <input asp-for="Stock" class="form-control" />
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Description" class="form-label">Beschrijving:</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Category" class="form-label">Categorie:</label>
+                    <input asp-for="Category" class="form-control" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="ArticleNumber" class="form-label">Artikelnummer:</label>
+                    <input asp-for="ArticleNumber" class="form-control" />
+                    <span asp-validation-for="ArticleNumber" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                <div>
+                    <label class="form-label">Zichtbaar voor klanten:</label>
+                    <div class="checkbox-group">
+                        <input type="radio" asp-for="IsVisible" value="true" id="zichtbaarJa" />
+                        <label for="zichtbaarJa">Ja</label>
+                        <input type="radio" asp-for="IsVisible" value="false" id="zichtbaarNee" />
+                        <label for="zichtbaarNee">Nee</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="create-btn" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div> *@
+
+<div class="main-container">
+    <div class="custom-title">Een Product toevoegen</div>
+    <a asp-action="AlleProducten" class="back-btn">terug</a>
+    <form asp-action="Create" method="post">
+        <div class="form-row">
+            <!-- Linkerkant: Formulier -->
+            <div class="form-section">
+                <div>
+                    <label asp-for="Name" class="form-label">Naam:</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Price" class="form-label">Prijs:</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Stock" class="form-label">Aantal op voorraad:</label>
+                    <input asp-for="Stock" class="form-control" />
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Description" class="form-label">Beschrijving:</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+            </div>
+            <!-- Rechterkant: Overige velden -->
+            <div class="form-section">
+                <div>
+                    <label asp-for="Category" class="form-label">Categorie:</label>
+                    <input asp-for="Category" class="form-control" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="ArticleNumber" class="form-label">Artikelnummer:</label>
+                    <input asp-for="ArticleNumber" class="form-control" />
+                    <span asp-validation-for="ArticleNumber" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                <div>
+                    <label class="form-label">Zichtbaar voor klanten:</label>
+                    <div class="checkbox-group">
+                        <input type="radio" asp-for="IsVisible" value="true" id="zichtbaarJa" />
+                        <label for="zichtbaarJa">Ja</label>
+                        <input type="radio" asp-for="IsVisible" value="false" id="zichtbaarNee" />
+                        <label for="zichtbaarNee">Nee</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="text-align:right;">
+            <input type="submit" value="Create" class="create-btn" />
+        </div>
+    </form>
 </div>
 
 <div>
