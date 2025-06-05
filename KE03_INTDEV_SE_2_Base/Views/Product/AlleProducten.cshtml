@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<DataAccessLayer.Models.Product>
 
 <h2>Alle Producten</h2>
+
+<div class="mb-3">
+    <a asp-action="Create" asp-controller="Product" class="btn btn-primary">Voeg product toe</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>

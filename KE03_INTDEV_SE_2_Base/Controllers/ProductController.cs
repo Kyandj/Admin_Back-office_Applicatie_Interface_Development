@@ -62,6 +62,27 @@ namespace KE03_INTDEV_SE_2_Base.Controllers
             var producten = await _context.Products.ToListAsync();
             return View(producten);
         }
+
+        // GET: Product/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Product/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                // Voeg product toe aan database
+                _context.Products.Add(product);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(AlleProducten));
+            }
+            return View(product);
+        }
     }
 }
 
