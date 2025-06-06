@@ -49,7 +49,7 @@ namespace DataAccessLayer
                     Category = "Schip",
                     Stock = 2,
                     IsVisible = true,
-                    ImageUrl = "https://voorbeeld.nl/nebuchadnezzar.jpg"
+                    ImageUrl = "https://ik.imagekit.io/rmlbayysp/1749196280538-Nebuchadnezzar_IFBP-5Ndy.png"
                 },
                 new Product
                 {
@@ -60,7 +60,7 @@ namespace DataAccessLayer
                     Category = "Stoel",
                     Stock = 10,
                     IsVisible = true,
-                    ImageUrl = "https://voorbeeld.nl/jackinchair.jpg"
+                    ImageUrl = "https://ik.imagekit.io/rmlbayysp/1749196470928-Jack-In-Chair__gltLldy8G.jpg"
                 },
                 new Product
                 {
@@ -71,7 +71,7 @@ namespace DataAccessLayer
                     Category = "Wapen",
                     Stock = 5,
                     IsVisible = false,
-                    ImageUrl = "https://voorbeeld.nl/emp.jpg"
+                    ImageUrl = "https://ik.imagekit.io/rmlbayysp/1749196510463-EMP_O2UUI6rQD.jpg"
                 }
             };
             context.Products.AddRange(products);
