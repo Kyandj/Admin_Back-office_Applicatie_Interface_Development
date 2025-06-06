@@ -5,7 +5,7 @@
 }
 
 <div class="main-container">
-    <a asp-action="AlleProducten" class="btn btn-back">Back to List</a>
+    <a asp-action="AlleProducten" class="btn btn-back">Terug </a>
     <h2>Product Details</h2>
     <div class="form-responsive-row">
         <!-- Image section first (left) -->
@@ -22,25 +22,25 @@
         <!-- Details section second (right) -->
         <div class="form-section">
             <dl class="row">
-                <dt class="col-sm-4">Name</dt>
+                <dt class="col-sm-4">Naam</dt>
                 <dd class="col-sm-8">@Model.Name</dd>
 
-                <dt class="col-sm-4">Category</dt>
+                <dt class="col-sm-4">Categorie</dt>
                 <dd class="col-sm-8">@Model.Category</dd>
 
-                <dt class="col-sm-4">Price</dt>
+                <dt class="col-sm-4">Prijs</dt>
                 <dd class="col-sm-8">@Model.Price.ToString("C")</dd>
 
-                <dt class="col-sm-4">Article Number</dt>
+                <dt class="col-sm-4">Artikelnummer</dt>
                 <dd class="col-sm-8">@Model.ArticleNumber</dd>
 
-                <dt class="col-sm-4">Stock</dt>
+                <dt class="col-sm-4">Voorraad</dt>
                 <dd class="col-sm-8">@Model.Stock</dd>
 
-                <dt class="col-sm-4">Visible</dt>
+                <dt class="col-sm-4">Zichtbaar voor klanten</dt>
                 <dd class="col-sm-8">@Model.IsVisible</dd>
 
-                <dt class="col-sm-4">Description</dt>
+                <dt class="col-sm-4">Beschrijving</dt>
                 <dd class="col-sm-8">@Model.Description</dd>
             </dl>
         </div>
