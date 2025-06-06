@@ -42,14 +42,21 @@
             </div>
             <div class="card-body">
                 <ul>
-                    <li>EMP (Electro-Magnetic Pulse) Device – 5 op voorraad</li>
-                    <li>Jack-in Chair – 3 op voorraad</li>
-                    <li>Nebuchadnezzar - 4 op voorraad</li>
+                    @if (ViewBag.LowStockProducts != null && ((IEnumerable<DataAccessLayer.Models.Product>)ViewBag.LowStockProducts).Any())
+                    {
+                        foreach (var product in (IEnumerable<DataAccessLayer.Models.Product>)ViewBag.LowStockProducts)
+                        {
+                            <li>@product.Name – @product.Stock op voorraad</li>
+                        }
+                    }
+                    else
+                    {
+                        <li>Geen producten met lage voorraad</li>
+                    }
                 </ul>
             </div>
         </div>
     </div>
-
 
     <!-- Dagelijkse bestellingen -->
     <div class="col-md-6 mb-4">
